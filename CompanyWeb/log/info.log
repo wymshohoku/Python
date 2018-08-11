@@ -1,0 +1,35 @@
+2018-08-11 15:40:10,167 log_helper.py[line:13] INFO url:/api/files/ ip:127.0.0.1 params(get):action=uploadimage params(post):{'dict': {'action': ['uploadimage']}}
+2018-08-11 15:54:59,523 log_helper.py[line:13] INFO url:/api/files/ ip:127.0.0.1 params(get):action=uploadimage params(post):{'dict': {'action': ['uploadimage']}}
+2018-08-11 15:56:17,288 log_helper.py[line:13] INFO url:/api/files/ ip:127.0.0.1 params(get):action=uploadimage params(post):{'dict': {'action': ['uploadimage']}}
+2018-08-11 15:57:05,135 log_helper.py[line:13] INFO url:/api/files/ ip:127.0.0.1 params(get):action=uploadimage params(post):{'dict': {'action': ['uploadimage']}}
+2018-08-11 15:58:37,629 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1
+2018-08-11 15:59:27,800 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1
+2018-08-11 16:00:16,265 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1
+2018-08-11 16:01:46,216 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1
+2018-08-11 16:01:46,297 log_helper.py[line:13] INFO sql:select * from infomation where id = 1
+2018-08-11 16:10:16,173 log_helper.py[line:13] INFO url:/api/files/ ip:127.0.0.1 params(get):action=uploadimage params(post):{'dict': {'action': ['uploadimage']}}
+2018-08-11 16:10:16,223 log_helper.py[line:13] INFO url:/upload/20180811/201808111610167i5RG.jpeg ip:127.0.0.1
+2018-08-11 16:10:52,359 log_helper.py[line:13] INFO url:/api/files/ ip:127.0.0.1 params(post):{'dict': {}}
+2018-08-11 16:10:52,373 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1 params(post):{'dict': {'_method': ['put'], 'content': ['<p><img src="/upload/20180811/201808111610167i5RG.jpeg" title="201808111610167i5RG.jpeg" alt="201808111610167i5RG.jpeg"/></p>'], 'front_cover_img': ['/upload/20180811/201808111610528vf2E.jpeg']}}
+2018-08-11 16:10:52,622 log_helper.py[line:13] INFO sql:update infomation set front_cover_img=%s, content=%s where id=1
+2018-08-11 16:15:27,687 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1
+2018-08-11 16:15:27,763 log_helper.py[line:13] INFO sql:select * from infomation where id = 1
+2018-08-11 16:15:27,777 log_helper.py[line:13] INFO url:/upload/20180811/201808111610167i5RG.jpeg ip:127.0.0.1
+2018-08-11 16:15:27,784 log_helper.py[line:13] INFO url:/upload/20180811/201808111610528vf2E.jpeg ip:127.0.0.1
+2018-08-11 16:16:12,257 log_helper.py[line:13] INFO url:/api/login/ ip:127.0.0.1 params(post):{'dict': {'_method': ['put'], 'username': ['admin'], 'password': ['123456'], 'verify': ['81as']}}
+2018-08-11 16:16:12,328 log_helper.py[line:13] INFO sql:select * from manager where login_name=%s and login_password=%s
+2018-08-11 16:16:12,328 log_helper.py[line:13] INFO sql:b"select * from manager where login_name='admin' and login_password='E10ADC3949BA59ABBE56E057F20F883E'"
+2018-08-11 16:16:12,331 log_helper.py[line:13] INFO sql:update manager set last_login_time=%s, last_login_ip=%s, login_count=login_count+1 where id=%s
+2018-08-11 16:16:12,332 log_helper.py[line:23] INFO sql生成失败:('connection already closed',) query:update manager set last_login_time=%s, last_login_ip=%s, login_count=login_count+1 where id=%s
+Traceback (most recent call last):
+  File "e:\Python\CompanyWeb\common\db_helper.py", line 86, in get_sql
+    self.cursor = self.connect.cursor()
+psycopg2.InterfaceError: connection already closed
+
+程序调用堆栈的日志：main.py(<module>:110)->bottle.py(run:3123)->bottle.py(run:2782)->socketserver.py(serve_forever:238)->socketserver.py(_handle_request_noblock:317)->socketserver.py(process_request:348)->socketserver.py(finish_request:361)->socketserver.py(__init__:696)->simple_server.py(handle:133)->handlers.py(run:137)->middleware.py(__call__:156)->bottle.py(__call__:979)->bottle.py(wsgi:954)->bottle.py(_handle:862)->bottle.py(wrapper:1740)->login.py(post_login:75)->db_helper.py(get_sql:91)->log_helper.py(error:20)->
+
+2018-08-11 16:16:12,729 log_helper.py[line:13] INFO run time: 0.39716323085883687 s sql: update manager set last_login_time=%s, last_login_ip=%s, login_count=login_count+1 where id=%s
+2018-08-11 16:16:12,987 log_helper.py[line:13] INFO url:/api/about/ ip:127.0.0.1
+2018-08-11 16:16:13,074 log_helper.py[line:13] INFO sql:select * from infomation where id = 1
+2018-08-11 16:16:13,093 log_helper.py[line:13] INFO url:/upload/20180811/201808111610528vf2E.jpeg ip:127.0.0.1
+2018-08-11 16:16:13,105 log_helper.py[line:13] INFO url:/upload/20180811/201808111610167i5RG.jpeg ip:127.0.0.1
